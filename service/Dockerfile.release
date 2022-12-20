@@ -1,0 +1,41 @@
+ARG NODE_VERSION=14.15.5
+
+### builder state ###
+FROM node:${NODE_VERSION} as builder
+
+RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
+
+WORKDIR /home/node/app
+USER node
+
+COPY package*.json ./
+RUN npm ci --ignore-scripts
+
+COPY --chown=node:node . .
+
+RUN npm run build
+
+
+### app state ###
+
+FROM node:${NODE_VERSION}-alpine
+
+RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
+
+WORKDIR /home/node/app
+USER node
+ARG branch
+
+COPY --chown=node:node --from=builder /home/node/app/package*.json ./
+COPY --chown=node:node --from=builder /home/node/app/buildscript.js ./
+COPY --chown=node:node --from=builder /home/node/app/build/ ./
+COPY --chown=node:node --from=builder /home/node/app/apis/swagger.json ./apis/
+COPY --chown=node:node --from=builder /home/node/app/node_modules/ ./node_modules/
+COPY --chown=node:node --from=builder /home/node/app/config/ ./config/
+
+ENV NODE_ENV="production"
+ENV PATH="$PATH:/home/node/app/node_modules/.bin"
+
+EXPOSE 3000
+
+CMD [ "npm","run","docker:run" ]

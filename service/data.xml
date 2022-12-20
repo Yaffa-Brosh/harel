@@ -1,0 +1,20 @@
+<users>
+    <user id="1">
+        <firstName>v</firstName>
+        <lastName>Brosh</lastName>
+        <date>10/10/2000</date>
+        <phone>11111</phone>
+    </user>
+    <user id="2">
+        <firstName>Jon</firstName>
+        <lastName>Flam</lastName>
+        <date>10/01/2000</date>
+        <phone>123456789</phone>
+    </user>
+    <user id="3">
+        <firstName>David</firstName>
+        <lastName>Green</lastName>
+        <date>10/01/2000</date>
+        <phone>123456789</phone>
+    </user>
+</users>

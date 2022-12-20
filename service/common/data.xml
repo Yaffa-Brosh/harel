@@ -1,0 +1,23 @@
+<users>
+    <user id="1">
+        <firstName>yyy</firstName>
+        <lastName>Brosh</lastName>
+        <date>2000-10-04T21:00:00.000Z</date>
+        <phone>11111</phone>
+        <email>y123@gmail.com</email>
+    </user>
+    <user id="2">
+        <firstName>rrrr</firstName>
+        <lastName>vvvv</lastName>
+        <date>2000-01-04T22:00:00.000Z</date>
+        <phone>111111</phone>
+        <email>d123@gmail.com</email>
+    </user>
+    <user id="3">
+        <firstName>David</firstName>
+        <lastName>Green</lastName>
+        <date>2000-10-15T22:00:00.000Z</date>
+        <phone>123456789</phone>
+        <email>v123@gmail.com</email>
+    </user>
+</users>

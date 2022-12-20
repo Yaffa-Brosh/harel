@@ -1,0 +1,6 @@
+# defines logging methods of the server.
+serviceName: 'harel-service'
+version: 1.0.1
+# defines connection string to mongodb database
+
+allowedOrigin: 'http://localhost:3004'

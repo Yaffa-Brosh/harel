@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  backend:
+    stdin_open: true
+    tty: true
+    environment:
+      DEBUG: 'true'
+    entrypoint: 
+      - '/bin/sh'
+    volumes: 
+      - ../../backend:/usr/src/service

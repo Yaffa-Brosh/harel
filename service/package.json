@@ -1,0 +1,65 @@
+{
+  "name": "acdc-service",
+  "version": "0.0.1",
+  "description": "Backend for the ACDC Portal",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon index.ts",
+    "build": "tsc --project .",
+    "test": "jest",
+    "docker": "npm run build && docker build -t service-image -f Dockerfile .",
+    "docker:run": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Tal Vegvizer",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "applicationinsights": "^2.3.3",
+    "axios": "^0.27.2",
+    "config": "^3.3.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "gridfs-stream": "^1.1.1",
+    "helmet": "^4.2.0",
+    "joi": "^17.4.0",
+    "mongo-dot-notation": "^2.0.0",
+    "mongodb": "^3.6.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0",
+    "swagger-ui-express": "^4.1.6",
+    "xml-formatter": "^3.2.0",
+    "xml2json": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/config": "0.0.38",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.9",
+    "@types/gridfs-stream": "^0.5.33",
+    "@types/jest": "^26.0.19",
+    "@types/mongodb": "^3.6.3",
+    "@types/morgan": "^1.7.35",
+    "@types/multer": "^1.4.5",
+    "@types/multer-gridfs-storage": "^4.0.1",
+    "@types/node": "^14.14.9",
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.1.2"
+  }
+}
